@@ -31,7 +31,7 @@ TT2 and Jinja2 share:
 No external dependencies beyond core Perl 5.20+.
 
 ```bash
-git clone <repository>
+git clone https://github.com/lucianofedericopereira/jinja2tt2
 cd jinja2tt2
 ```
 
