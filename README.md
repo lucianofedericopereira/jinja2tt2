@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/jinja2tt2.png" alt="Jinja2tt2 Logo" width="400">
+  <img src="assets/jinja2tt2.png" alt="Jinja2tt2 Logo">
 </p>
 
 # Jinja2tt2
