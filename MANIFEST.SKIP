@@ -1,0 +1,28 @@
+# Version control
+\.git/
+\.gitignore
+
+# Build artifacts
+^Makefile$
+^Makefile\.old$
+^blib/
+^pm_to_blib$
+^MYMETA\.(json|yml)$
+^Jinja2-TT2-[\d.]+/
+^Jinja2-TT2-[\d.]+\.tar\.gz$
+
+# Editor files
+\.swp$
+\.swo$
+~$
+\.bak$
+
+# OS files
+\.DS_Store$
+Thumbs\.db$
+
+# Examples (not needed in CPAN dist)
+^examples/
+
+# Assets (logo)
+^assets/

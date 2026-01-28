@@ -1,0 +1,29 @@
+{# Macro examples #}
+
+{% macro button(text, type="primary", disabled=false) %}
+<button class="btn btn-{{ type }}"{% if disabled %} disabled{% endif %}>
+    {{ text }}
+</button>
+{% endmacro %}
+
+{% macro input(name, value="", type="text", placeholder="") %}
+<input type="{{ type }}"
+       name="{{ name }}"
+       value="{{ value }}"
+       {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}>
+{% endmacro %}
+
+{% macro form_field(label, name, value="") %}
+<div class="form-group">
+    <label for="{{ name }}">{{ label }}</label>
+    {{ input(name, value) }}
+</div>
+{% endmacro %}
+
+{# Using macros #}
+<form>
+    {{ form_field("Username", "username") }}
+    {{ form_field("Email", "email", user.email) }}
+    {{ button("Submit") }}
+    {{ button("Cancel", type="secondary") }}
+</form>

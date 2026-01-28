@@ -1,0 +1,37 @@
+{# Demonstrating various Jinja2 filters #}
+
+{# String filters #}
+{{ name|upper }}
+{{ name|lower }}
+{{ name|capitalize }}
+{{ name|title }}
+{{ text|trim }}
+{{ content|escape }}
+{{ html|safe }}
+
+{# List filters #}
+{{ items|first }}
+{{ items|last }}
+{{ items|length }}
+{{ items|reverse }}
+{{ items|sort }}
+{{ items|join(", ") }}
+{{ items|unique }}
+
+{# Number filters #}
+{{ number|abs }}
+{{ price|round(2) }}
+{{ value|int }}
+
+{# Default values #}
+{{ name|default("Anonymous") }}
+{{ count|default(0) }}
+
+{# String manipulation #}
+{{ text|replace("old", "new") }}
+{{ text|truncate(50) }}
+{{ paragraph|wordwrap(80) }}
+
+{# Filter chains #}
+{{ name|lower|trim|capitalize }}
+{{ items|sort|reverse|first }}

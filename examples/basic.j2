@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title|default("Welcome") }}</title>
+</head>
+<body>
+    {# This is a comment #}
+
+    {% if user %}
+        <h1>Hello, {{ user.name|upper }}!</h1>
+        <p>Email: {{ user.email }}</p>
+    {% elif guest %}
+        <h1>Hello, Guest!</h1>
+    {% else %}
+        <h1>Please log in</h1>
+    {% endif %}
+
+    <h2>Items</h2>
+    <ul>
+    {% for item in items %}
+        <li class="{{ 'first' if loop.first else '' }}">
+            {{ loop.index }}. {{ item.name }} - ${{ item.price }}
+        </li>
+    {% endfor %}
+    </ul>
+
+    {% set total = items|sum(attribute='price') %}
+    <p>Total: ${{ total }}</p>
+</body>
+</html>

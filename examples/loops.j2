@@ -1,0 +1,53 @@
+{# Loop examples #}
+
+{# Basic loop #}
+{% for item in items %}
+    {{ item }}
+{% endfor %}
+
+{# Loop with index #}
+{% for user in users %}
+    {{ loop.index }}. {{ user.name }}
+{% endfor %}
+
+{# Loop variables #}
+{% for item in items %}
+    {% if loop.first %}<ul>{% endif %}
+    <li>{{ item }}</li>
+    {% if loop.last %}</ul>{% endif %}
+{% endfor %}
+
+{# Loop with else (empty) #}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% else %}
+    <p>No messages found.</p>
+{% endfor %}
+
+{# Tuple unpacking #}
+{% for key, value in data.items() %}
+    <dt>{{ key }}</dt>
+    <dd>{{ value }}</dd>
+{% endfor %}
+
+{# Loop with filter #}
+{% for item in items if item.active %}
+    {{ item.name }}
+{% endfor %}
+
+{# Nested loops #}
+{% for category in categories %}
+    <h3>{{ category.name }}</h3>
+    <ul>
+    {% for item in category.items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+{# Using loop.cycle #}
+{% for row in rows %}
+    <tr class="{{ loop.cycle('odd', 'even') }}">
+        <td>{{ row }}</td>
+    </tr>
+{% endfor %}
